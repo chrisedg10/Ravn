@@ -36,7 +36,7 @@
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
-      <version>7.5</version>
+      <version>7.7.1</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
@@ -136,13 +136,6 @@
     <dependencies>
 
       <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-api</artifactId>
-        <version>2.53.0</version>
-      </dependency>
-
-
-      <dependency>
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
         <version>1.13</version>
@@ -150,23 +143,9 @@
 
 
       <dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-remote-driver</artifactId>
-        <version>2.53.0</version>
-      </dependency>
-
-
-      <dependency>
         <groupId>com.beust</groupId>
         <artifactId>jcommander</artifactId>
         <version>1.82</version>
-      </dependency>
-
-
-      <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>19.0</version>
       </dependency>
 
 

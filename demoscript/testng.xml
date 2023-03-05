@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+
+  <test thread-count="1" name="Test001">
+    <parameter name="browser" value="Chrome" />
+    <parameter name="URL" value="https://automationexercise.com/" />
+    <parameter name="linkText" value="Signup" />
+    <classes>
+      <class name="ravn.AppTest" />
+    </classes>
+  </test> <!-- Test -->
+
+</suite> <!-- Suite -->
