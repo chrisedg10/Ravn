@@ -8,7 +8,7 @@ import ravn.Contexts.*;
 public interface HomePageFunctions extends Waits{
     
     default public void verifySelectedLink(WebDriver driver){
-        System.out.println("\nAutomation practice landing page\n");
+        System.out.println("\nAutomation practice: Landing page\n");
 
         HomePage home = new HomePage(driver);
 
@@ -17,7 +17,7 @@ public interface HomePageFunctions extends Waits{
             String style = link.getAttribute("style");
 
             if (style != null && style.length() != 0) {
-                System.out.println("**The hyperlink " + text + " is currently selected");
+                System.out.println("** The hyperlink " + text + " is currently selected");
                 break;
             } 
         }
@@ -31,7 +31,7 @@ public interface HomePageFunctions extends Waits{
 
             if (text.contains(linkText)) {
                 link.click();
-                System.out.println("**Clicked on: " + linkText);
+                System.out.println("** Clicked on: " + linkText);
                 break;
             } 
         }

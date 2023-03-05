@@ -7,6 +7,8 @@
     <parameter name="browser" value="Chrome" />
     <parameter name="URL" value="https://automationexercise.com/" />
     <parameter name="linkText" value="Signup" />
+    <parameter name="name" value="Christian Hernandez" />
+    <parameter name="email" value="ceh.edgardo10@gmail.com" />
     <classes>
       <class name="ravn.AppTest" />
     </classes>

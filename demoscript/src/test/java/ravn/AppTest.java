@@ -10,7 +10,7 @@ import ravn.Functions.*;
 /**
  * Unit test for simple App.
  */
-public class AppTest extends WebDriverBase implements HomePageFunctions{
+public class AppTest extends WebDriverBase implements HomePageFunctions, LoginFunctions{
     @Parameters({ "browser", "URL" })
     @BeforeClass(alwaysRun = true)
     public void setUp(String browser, String URL) throws Exception {
@@ -20,11 +20,13 @@ public class AppTest extends WebDriverBase implements HomePageFunctions{
         System.out.println("\n***Execution Started***\n");
     }
 
-    @Parameters({ "linkText" })
+    @Parameters({ "linkText", "name", "email" })
     @Test(priority = 0)
-    public void initTest(String linkText){
+    public void initTest(String linkText, String name, String email){
         verifySelectedLink(driver);
         selectLink(driver, linkText);
+        getSignUpBanner(driver);
+        enterNewCredentials(driver, name, email);
     }
 
     @AfterClass(alwaysRun = true)
