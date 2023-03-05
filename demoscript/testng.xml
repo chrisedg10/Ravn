@@ -9,6 +9,9 @@
     <parameter name="linkText" value="Signup" />
     <parameter name="name" value="Christian Hernandez" />
     <parameter name="email" value="ceh.edgardo10@gmail.com" />
+    <parameter name="title" value="Mrs" />
+    <parameter name="password" value="Test@123" />
+    <parameter name="dob" value="20/May/1993" />
     <classes>
       <class name="ravn.AppTest" />
     </classes>
