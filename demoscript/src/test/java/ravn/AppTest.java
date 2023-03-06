@@ -10,7 +10,8 @@ import ravn.Functions.*;
 /**
  * Unit test for simple App.
  */
-public class AppTest extends WebDriverBase implements HomePageFunctions, LoginFunctions, SignUpPageFunctions{
+public class AppTest extends WebDriverBase implements HomePageFunctions, LoginFunctions, 
+SignUpPageFunctions, AccountVerificationFunctions{
     @Parameters({ "browser", "URL" })
     @BeforeClass(alwaysRun = true)
     public void setUp(String browser, String URL) throws Exception {
@@ -38,12 +39,24 @@ public class AppTest extends WebDriverBase implements HomePageFunctions, LoginFu
     "company", "addLnOne", "addLnTwo", "country", "state", "city", "zipCode", "mobile" })
     @Test(priority = 2)
     public void fillOutInfo(String title, String password, String dob, String fistName, String lastName, String company, 
-    String addLnOne, String addLnTwo, String country, String state, String city, String zipCode, String mobile){
+    String addLnOne, String addLnTwo, String country, String state, String city, String zipCode, String mobile) throws InterruptedException{
         setTitle(driver, title);
         enterPassword(driver, password);
         setDob(driver, dob);
         selectCheckboxes(driver);
         enterAddressInfo(driver, fistName, lastName, company, addLnOne, addLnTwo, country, state, city, zipCode, mobile);
+        Thread.sleep(5000);
+    }
+
+    @Test(priority = 3)
+    public void completeCreation(){
+        verifyTitle(driver);
+        completeValidation(driver);
+    }
+
+    @Test(priority = 4)
+    public void verifyAccount(){
+        
     }
 
     @AfterClass(alwaysRun = true)

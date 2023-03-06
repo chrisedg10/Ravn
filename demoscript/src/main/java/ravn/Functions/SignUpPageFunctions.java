@@ -96,6 +96,7 @@ public interface SignUpPageFunctions extends Waits{
 
         Select select = new Select(element.getDropdowns().get(3));
         select.selectByValue(country);
+        System.out.println("*** Selected country: " + select.getFirstSelectedOption().getAttribute("value"));
 
         element.state().sendKeys(state);
         System.out.println("*** Entered " + state + " in State field");
