@@ -36,4 +36,25 @@ public class LoginPage {
         WebElement button = singUpSection().findElement(By.className("btn"));
         return button;
     }
+
+    public WebElement logInSection(){
+
+        WebElement form = driver.findElement(By.className("login-form"));
+        return form;
+    }
+
+    public WebElement logInEmail(){
+        WebElement email = logInSection().findElement(By.name("email"));
+        return email;
+    }
+
+    public WebElement logInPassword(){
+        WebElement email = logInSection().findElement(By.name("password"));
+        return email;
+    }
+
+    public WebElement logInButton(){
+        WebElement button = logInSection().findElement(By.className("btn"));
+        return button;
+    }
 }

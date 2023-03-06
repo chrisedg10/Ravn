@@ -69,6 +69,7 @@ public interface HomePageFunctions extends Waits{
             
             if (text.contains("Logout")) {
                 link.click();
+                System.out.println("*** Clicked on LogOut link");
                 break;
             } 
         }

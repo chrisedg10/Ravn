@@ -62,6 +62,13 @@ SignUpPageFunctions, AccountVerificationFunctions{
         logOut(driver);
     }
 
+    @Parameters({ "password", "name" })
+    @Test(priority = 5)
+    public void LogInApp(String password, String name) throws IOException{
+        LogIn(driver, password);
+        verifyUsername(driver, name);
+    }
+
     @AfterClass(alwaysRun = true)
     public void tearDown() throws Exception {
         driver.quit();

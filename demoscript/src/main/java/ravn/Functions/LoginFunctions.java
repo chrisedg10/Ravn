@@ -1,5 +1,7 @@
 package ravn.Functions;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -51,7 +53,7 @@ public interface LoginFunctions extends Waits{
         System.out.println("*** Entered " + refactoredEmail + " in email field");
 
         FileWriter writer = new FileWriter("src\\main\\java\\ravn\\TestFile\\credentials.txt");
-            writer.write(name + "/" + refactoredEmail);
+            writer.write(refactoredEmail);
             writer.close();
         
         login.signUpButton().click();
@@ -59,7 +61,26 @@ public interface LoginFunctions extends Waits{
 
     }
 
-    default public void LogIn(WebDriver driver){
-        
+    default public void LogIn(WebDriver driver, String password) throws IOException{
+
+        System.out.println("\nAutomation practice: Login page\n");
+        LoginPage login = new LoginPage(driver);
+
+        FileReader fileReader = new FileReader("src\\main\\java\\ravn\\TestFile\\credentials.txt");
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String line = bufferedReader.readLine();
+
+        bufferedReader.close();
+        fileReader.close();
+
+        login.logInEmail().sendKeys(line);
+        System.out.println("*** Entered " + line + " in Email Field");
+
+        login.logInPassword().sendKeys(password);
+        System.out.println("*** Entered Password");
+
+        login.logInButton().click();
+        System.out.println("*** Clicked on Login button");
+
     }
 }
