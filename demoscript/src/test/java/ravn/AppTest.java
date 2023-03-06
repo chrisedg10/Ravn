@@ -34,13 +34,16 @@ public class AppTest extends WebDriverBase implements HomePageFunctions, LoginFu
         enterNewCredentials(driver, name, email);
     }
 
-    @Parameters({ "title", "password", "dob" })
+    @Parameters({ "title", "password", "dob", "firstName", "lastName", 
+    "company", "addLnOne", "addLnTwo", "country", "state", "city", "zipCode", "mobile" })
     @Test(priority = 2)
-    public void fillOutInfo(String title, String password, String dob){
+    public void fillOutInfo(String title, String password, String dob, String fistName, String lastName, String company, 
+    String addLnOne, String addLnTwo, String country, String state, String city, String zipCode, String mobile){
         setTitle(driver, title);
         enterPassword(driver, password);
         setDob(driver, dob);
         selectCheckboxes(driver);
+        enterAddressInfo(driver, fistName, lastName, company, addLnOne, addLnTwo, country, state, city, zipCode, mobile);
     }
 
     @AfterClass(alwaysRun = true)

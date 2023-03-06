@@ -19,6 +19,8 @@ public class SignUpPage {
         return accountSection; 
     }
 
+    /*** ACCOUNT INFORMATION LOCATORS ***/
+
     public List<WebElement> banners(){
         List<WebElement> headers = accountInfoSection().findElements(By.tagName("b"));
         return headers;
@@ -47,8 +49,59 @@ public class SignUpPage {
         for(WebElement cb: checkers){
             checkboxes.add(cb.findElement(By.tagName("input")));
         }
-
         return checkboxes;
+    }
+
+    /*** ADDRESS INFORMATION LOCATORS ***/
+
+    public WebElement firstName(){
+        WebElement name = accountInfoSection().findElement(By.name("first_name"));
+        return name;
+    }
+
+    public WebElement lastName(){
+        WebElement last = accountInfoSection().findElement(By.name("last_name"));
+        return last;
+    }
+
+    public WebElement company(){
+        WebElement company = accountInfoSection().findElement(By.name("first_name"));
+        return company;
+    }
+
+    public WebElement addressLineOne(){
+        WebElement address = accountInfoSection().findElement(By.name("address1"));
+        return address;
+    }
+
+    public WebElement addressLineTwo(){
+        WebElement address = accountInfoSection().findElement(By.name("address2"));
+        return address;
+    }
+
+    public WebElement state(){
+        WebElement state = accountInfoSection().findElement(By.name("state"));
+        return state;
+    }
+
+    public WebElement city(){
+        WebElement city = accountInfoSection().findElement(By.name("city"));
+        return city;
+    }
+
+    public WebElement zipcode(){
+        WebElement zip = accountInfoSection().findElement(By.name("zipcode"));
+        return zip;
+    }
+
+    public WebElement mobileNumber(){
+        WebElement mnumber = accountInfoSection().findElement(By.name("mobile_number"));
+        return mnumber;
+    }
+
+    public WebElement createAccount(){
+        WebElement submitButton = accountInfoSection().findElement(By.className("btn-default"));
+        return submitButton;
     }
 
 }

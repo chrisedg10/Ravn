@@ -7,11 +7,21 @@
     <parameter name="browser" value="Chrome" />
     <parameter name="URL" value="https://automationexercise.com/" />
     <parameter name="linkText" value="Signup" />
-    <parameter name="name" value="Christian Hernandez" />
+    <parameter name="name" value="chrisedg10" />
     <parameter name="email" value="ceh.edgardo10@gmail.com" />
     <parameter name="title" value="Mrs" />
     <parameter name="password" value="Test@123" />
     <parameter name="dob" value="20/May/1993" />
+    <parameter name="firstName" value="Christian" />
+    <parameter name="lastName" value="Hernandez" />
+    <parameter name="company" value="My Company" />
+    <parameter name="addLnOne" value="Caesar St" />
+    <parameter name="addLnTwo" value="Bissonet 456" />
+    <parameter name="country" value="United States" />
+    <parameter name="state" value="Kansas" />
+    <parameter name="city" value="Audrier" />
+    <parameter name="zipCode" value="12345" />
+    <parameter name="mobile" value="5557770295" />
     <classes>
       <class name="ravn.AppTest" />
     </classes>
