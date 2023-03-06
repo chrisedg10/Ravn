@@ -2,6 +2,8 @@ package ravn;
 
 import static org.junit.Assert.fail;
 
+import java.io.IOException;
+
 import org.testng.annotations.*;
 
 import ravn.Constants.WebDriverBase;
@@ -30,7 +32,7 @@ SignUpPageFunctions, AccountVerificationFunctions{
 
     @Parameters({ "name", "email" })
     @Test(priority = 1)
-    public void loginPage(String name, String email){
+    public void loginPage(String name, String email) throws IOException{
         getSignUpBanner(driver);
         enterNewCredentials(driver, name, email);
     }
@@ -39,13 +41,12 @@ SignUpPageFunctions, AccountVerificationFunctions{
     "company", "addLnOne", "addLnTwo", "country", "state", "city", "zipCode", "mobile" })
     @Test(priority = 2)
     public void fillOutInfo(String title, String password, String dob, String fistName, String lastName, String company, 
-    String addLnOne, String addLnTwo, String country, String state, String city, String zipCode, String mobile) throws InterruptedException{
+    String addLnOne, String addLnTwo, String country, String state, String city, String zipCode, String mobile){
         setTitle(driver, title);
         enterPassword(driver, password);
         setDob(driver, dob);
         selectCheckboxes(driver);
         enterAddressInfo(driver, fistName, lastName, company, addLnOne, addLnTwo, country, state, city, zipCode, mobile);
-        Thread.sleep(5000);
     }
 
     @Test(priority = 3)
@@ -54,9 +55,11 @@ SignUpPageFunctions, AccountVerificationFunctions{
         completeValidation(driver);
     }
 
+    @Parameters({ "name" })
     @Test(priority = 4)
-    public void verifyAccount(){
-        
+    public void verifyAccount(String name){
+        verifyUsername(driver, name);
+        logOut(driver);
     }
 
     @AfterClass(alwaysRun = true)

@@ -1,5 +1,8 @@
 package ravn.Functions;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -36,7 +39,7 @@ public interface LoginFunctions extends Waits{
         return email;
     }
 
-    default public void enterNewCredentials(WebDriver driver, String name, String email){
+    default public void enterNewCredentials(WebDriver driver, String name, String email) throws IOException{
         LoginPage login = new LoginPage(driver);
 
         String refactoredEmail = refactorEmail(email);
@@ -46,9 +49,17 @@ public interface LoginFunctions extends Waits{
 
         login.emailInput().sendKeys(refactoredEmail);
         System.out.println("*** Entered " + refactoredEmail + " in email field");
+
+        FileWriter writer = new FileWriter("src\\main\\java\\ravn\\TestFile\\credentials.txt");
+            writer.write(name + "/" + refactoredEmail);
+            writer.close();
         
         login.signUpButton().click();
         System.out.println("*** Clicked on Sign Up button");
 
+    }
+
+    default public void LogIn(WebDriver driver){
+        
     }
 }

@@ -7,9 +7,10 @@ import ravn.Contexts.*;
 
 public interface AccountVerificationFunctions extends Waits{
     default public void verifyTitle(WebDriver driver){
-        System.out.println("\nAutomation practice: Landing page\n");
+        System.out.println("\nAutomation practice: Confirmation page\n");
 
         AccountVerificationPage element = new AccountVerificationPage(driver);
+        waitUntilElementIsVisible(driver, element.verificationTitle());
 
         String text = element.verificationTitle().getText();
 

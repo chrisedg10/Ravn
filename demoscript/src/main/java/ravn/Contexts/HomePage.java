@@ -20,4 +20,9 @@ public class HomePage {
 
         return links;
     }
+
+    public WebElement slider(){
+        WebElement slider = driver.findElement(By.id("slider-carousel"));
+        return slider;
+    }
 }

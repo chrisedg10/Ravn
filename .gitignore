@@ -24,3 +24,6 @@ hs_err_pid*
 
 #Target
 target/
+
+#Test Data
+src/main/java/ravn/TestFile
