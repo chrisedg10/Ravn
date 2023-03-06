@@ -13,6 +13,8 @@ public interface HomePageFunctions extends Waits{
 
         HomePage home = new HomePage(driver);
 
+        waitUntilElementIsVisible(driver, home.slider());
+
         for (WebElement link : home.homeLinks()) {
             String text = link.getText();
             String style = link.getAttribute("style");
