@@ -22,6 +22,8 @@
     <parameter name="city" value="Audrier" />
     <parameter name="zipCode" value="12345" />
     <parameter name="mobile" value="5557770295" />
+    <parameter name="confirmTitle" value="ACCOUNT CREATED!" />
+    <parameter name="deleteTitle" value="ACCOUNT DELETED!" />
     <classes>
       <class name="ravn.AppTest" />
     </classes>

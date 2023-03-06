@@ -49,9 +49,10 @@ SignUpPageFunctions, AccountVerificationFunctions{
         enterAddressInfo(driver, fistName, lastName, company, addLnOne, addLnTwo, country, state, city, zipCode, mobile);
     }
 
+    @Parameters({ "confirmTitle" })
     @Test(priority = 3)
-    public void completeCreation(){
-        verifyTitle(driver);
+    public void completeCreation(String confirmTitle){
+        verifyTitle(driver, confirmTitle);
         completeValidation(driver);
     }
 
@@ -67,6 +68,14 @@ SignUpPageFunctions, AccountVerificationFunctions{
     public void LogInApp(String password, String name) throws IOException{
         LogIn(driver, password);
         verifyUsername(driver, name);
+    }
+
+    @Parameters({ "deleteTitle" })
+    @Test(priority = 6)
+    public void closeAccount(String deleteTitle){
+        deleteAccount(driver);
+        verifyTitle(driver, deleteTitle);
+        System.out.println("\n***Execution Finished***\n");
     }
 
     @AfterClass(alwaysRun = true)

@@ -6,7 +6,7 @@ import org.testng.Assert;
 import ravn.Contexts.*;
 
 public interface AccountVerificationFunctions extends Waits{
-    default public void verifyTitle(WebDriver driver){
+    default public void verifyTitle(WebDriver driver, String title){
         System.out.println("\nAutomation practice: Confirmation page\n");
 
         AccountVerificationPage element = new AccountVerificationPage(driver);
@@ -17,7 +17,7 @@ public interface AccountVerificationFunctions extends Waits{
         try {
             Assert.assertTrue(element.verificationTitle().isDisplayed());
             try{
-                Assert.assertEquals(text, "ACCOUNT CREATED!");
+                Assert.assertEquals(text, title);
                 System.out.println("*** " + text + " is visible");
             } catch (AssertionError e){
                 System.out.println("Assert failed: " + e.getMessage());

@@ -74,5 +74,19 @@ public interface HomePageFunctions extends Waits{
             } 
         }
     }
+
+    default public void deleteAccount(WebDriver driver){
+        HomePage links = new HomePage(driver);
+
+        for (WebElement link : links.homeLinks()) {
+            String text = link.getText();
+            
+            if (text.contains("Delete")) {
+                link.click();
+                System.out.println("*** Clicked on Delete Account link");
+                break;
+            } 
+        }
+    }
         
 }
