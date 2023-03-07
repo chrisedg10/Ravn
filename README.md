@@ -13,6 +13,9 @@ Windows: https://mkyong.com/java/how-to-set-java_home-on-windows-10/
 Linux: https://stackoverflow.com/questions/24641536/how-to-set-java-home-in-linux-for-all-users 
 
 # VS Code configuration
+* Open project
+* Login to Github account in VS Code
+* Allow VS code access to GitHub
 * Go to "Extensions", type "Extension Pack for Java", then install it. The extension includes:
 Project Manager for Java
 Maven for Java
@@ -36,3 +39,16 @@ XML
 * Click on Clean to wipe project's cache
 * Click on Test to run test cases
 
+# IntelliJ configurations
+* Open project
+* Login to Github account in IntelliJ
+* Allow InstelliJ code access to GitHub
+* The IDE will display a message to install missing extensions, plugins, dependencies, etc. Install them all
+* Reload/Restart IDE
+
+# IntelliJ Execution
+* On upper right hand side of screen a "Maven" tab should be displayed
+* Uncollapse "Maven" tab to display maven project options and life ciclye commands
+* Double click "Install" to make sure all complements and dependencies are installed
+* Click on Clean to wipe project's cache
+* Click on Test to run test cases
