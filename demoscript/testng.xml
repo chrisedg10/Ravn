@@ -30,6 +30,17 @@
   </test>  <!-- Test -->
 
   <test thread-count="1" name="Test002">
+    <parameter name="browser" value="Firefox" />
+    <parameter name="URL" value="https://automationexercise.com/" />
+    <parameter name="linkText" value="Signup" />
+    <parameter name="email" value="ceh.edgardo10@gmail.com" />
+    <parameter name="password" value="Test@123" />
+    <classes>
+      <class name="ravn.FailedLogin" />
+    </classes>
+  </test> <!-- Test -->
+
+  <test thread-count="1" name="Test003">
     <parameter name="browser" value="Edge" />
     <parameter name="URL" value="https://automationexercise.com/" />
     <parameter name="linkText" value="Signup" />
