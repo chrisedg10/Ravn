@@ -19,6 +19,8 @@ public interface LoginFunctions extends Waits{
 
         LoginPage login = new LoginPage(driver);
 
+        waitUntilElementIsVisible(driver, login.signUpBanner());
+
         String text = login.signUpBanner().getText();
 
         try {

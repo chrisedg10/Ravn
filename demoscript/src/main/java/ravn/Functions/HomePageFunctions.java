@@ -45,7 +45,6 @@ public interface HomePageFunctions extends Waits{
         System.out.println("\nAutomation practice: Home page\n");
         HomePage links = new HomePage(driver);
 
-        implicitWait(driver);
         waitUntilElementIsVisible(driver, links.slider());
 
         for (WebElement link : links.homeLinks()) {
@@ -89,6 +88,5 @@ public interface HomePageFunctions extends Waits{
                 break;
             } 
         }
-    }
-        
+    }    
 }

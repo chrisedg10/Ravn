@@ -54,6 +54,7 @@ SignUpPageFunctions, AccountVerificationFunctions{
     public void completeCreation(String confirmTitle){
         verifyTitle(driver, confirmTitle);
         completeValidation(driver);
+        closeAdd(driver);
     }
 
     @Parameters({ "name" })

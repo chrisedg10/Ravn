@@ -1,5 +1,6 @@
 package ravn.Functions;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -30,7 +31,28 @@ public interface AccountVerificationFunctions extends Waits{
     default public void completeValidation(WebDriver driver){
         AccountVerificationPage element = new AccountVerificationPage(driver);
 
+        waitUntilElementIsClickable(driver, element.continueButton());
         element.continueButton().click();
         System.out.println("*** Clicked on Continue Button");
+        
+    }
+
+    default public void closeAdd(WebDriver driver){
+        AccountVerificationPage element = new AccountVerificationPage(driver);
+
+        implicitWait(driver);
+
+        if(element.addContainer().isEnabled()){
+            System.out.println("*** Ad Element Found");
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].remove()", element.addContainer());
+            System.out.println("*** Clicked on Close Add Button");
+        }
+
+        if(element.continueButton().isDisplayed()){
+            element.continueButton().click();
+        }
+        
+        driver.navigate().refresh();
     }
 }
