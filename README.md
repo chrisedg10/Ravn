@@ -39,7 +39,7 @@ XML
 * Click on Clean to wipe project's cache
 * Click on Test to run test cases
 
-# IntelliJ configurations
+# IntelliJ configuration
 * Open project
 * Login to Github account in IntelliJ
 * Allow InstelliJ code access to GitHub
