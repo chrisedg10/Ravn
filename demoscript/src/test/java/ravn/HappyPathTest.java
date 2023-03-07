@@ -12,7 +12,7 @@ import ravn.Functions.*;
 /**
  * Unit test for simple App.
  */
-public class AppTest extends WebDriverBase implements HomePageFunctions, LoginFunctions, 
+public class HappyPathTest extends WebDriverBase implements HomePageFunctions, LoginFunctions, 
 SignUpPageFunctions, AccountVerificationFunctions{
     @Parameters({ "browser", "URL" })
     @BeforeClass(alwaysRun = true)

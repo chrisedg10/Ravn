@@ -66,6 +66,37 @@ public interface LoginFunctions extends Waits{
 
     }
 
+    default public void negativeLogin(WebDriver driver, String email, String password){
+        LoginPage login = new LoginPage(driver);
+
+        waitUntilElementIsVisible(driver, login.logInBanner());
+
+        String refactoredEmail = refactorEmail(email);
+
+        login.logInEmail().sendKeys(refactoredEmail);
+        System.out.println("*** Entered " + refactoredEmail + " in Email Field");
+
+        login.logInPassword().sendKeys(password);
+        System.out.println("*** Entered Password");
+
+        login.logInButton().click();
+        System.out.println("*** Clicked on Login button");
+
+        try {
+            Assert.assertTrue(login.logInErrorMessage().isDisplayed());
+            try{
+                System.out.println("*** The following error was displayed: " + login.logInErrorMessage().getText());
+            } catch (AssertionError e){
+                System.out.println("Assert failed: " + e.getMessage());
+            }
+        } catch (AssertionError e) {
+            System.out.println("Assert failed: " + e.getMessage());
+        }
+
+        System.out.println("\n*** Execution Finished ***\n");
+
+    }
+
     default public void LogIn(WebDriver driver, String password) throws IOException{
 
         System.out.println("\nAutomation practice: Login page\n");

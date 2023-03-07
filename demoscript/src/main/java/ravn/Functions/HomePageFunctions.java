@@ -29,6 +29,8 @@ public interface HomePageFunctions extends Waits{
     default public void selectLink(WebDriver driver, String linkText){
         HomePage home = new HomePage(driver);
 
+        waitUntilElementIsVisible(driver, home.slider());
+
         for (WebElement link : home.homeLinks()) {
             String text = link.getText();
 

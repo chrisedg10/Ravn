@@ -11,6 +11,7 @@ public class LoginPage {
         this.driver = driver;
     }
 
+    /* SIGN UP SECTION LOCATORS */
     public WebElement singUpSection(){
 
         WebElement form = driver.findElement(By.className("signup-form"));
@@ -37,10 +38,17 @@ public class LoginPage {
         return button;
     }
 
+    /* LOG IN SECTION LOCATORS */
+
     public WebElement logInSection(){
 
         WebElement form = driver.findElement(By.className("login-form"));
         return form;
+    }
+
+    public WebElement logInBanner(){
+        WebElement banner = logInSection().findElement(By.tagName("h2"));
+        return banner;
     }
 
     public WebElement logInEmail(){
@@ -56,5 +64,10 @@ public class LoginPage {
     public WebElement logInButton(){
         WebElement button = logInSection().findElement(By.className("btn"));
         return button;
+    }
+
+    public WebElement logInErrorMessage(){
+        WebElement errorText = logInSection().findElement(By.tagName("p"));
+        return errorText;
     }
 }
