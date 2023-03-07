@@ -1,6 +1,7 @@
 package ravn.Functions;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -54,7 +55,9 @@ public interface LoginFunctions extends Waits{
         login.emailInput().sendKeys(refactoredEmail);
         System.out.println("*** Entered " + refactoredEmail + " in email field");
 
-        FileWriter writer = new FileWriter("src\\main\\java\\ravn\\TestFile\\credentials.txt");
+        String path = "src" + File.separator + "main" + File.separator + "java" + File.separator + "ravn" + File.separator + "TestFile" + File.separator + "credentials.txt";
+
+        FileWriter writer = new FileWriter(path);
             writer.write(refactoredEmail);
             writer.close();
         
@@ -68,7 +71,9 @@ public interface LoginFunctions extends Waits{
         System.out.println("\nAutomation practice: Login page\n");
         LoginPage login = new LoginPage(driver);
 
-        FileReader fileReader = new FileReader("src\\main\\java\\ravn\\TestFile\\credentials.txt");
+        String path = "src" + File.separator + "main" + File.separator + "java" + File.separator + "ravn" + File.separator + "TestFile" + File.separator + "credentials.txt";
+
+        FileReader fileReader = new FileReader(path);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String line = bufferedReader.readLine();
 
