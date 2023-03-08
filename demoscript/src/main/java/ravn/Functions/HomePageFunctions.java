@@ -53,13 +53,8 @@ public interface HomePageFunctions extends Waits{
             String text = link.getText();
             
             if (text.contains(name)) {
-                try{
-                    Assert.assertEquals(text, "Logged in as " + name);
-                    System.out.println("*** " + text + " is visible");
-                } catch (AssertionError e){
-                    System.out.println("Assert failed: " + e.getMessage());
-                }
-                break;
+                Assert.assertEquals(text, "Logged in as " + name);
+                System.out.println("*** " + text + " is visible");
             } 
         }
     }

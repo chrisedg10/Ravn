@@ -24,17 +24,8 @@ public interface LoginFunctions extends Waits{
 
         String text = login.signUpBanner().getText();
 
-        try {
-            Assert.assertTrue(login.signUpBanner().isDisplayed());
-            try{
-                Assert.assertEquals(text, "New User Signup!");
-                System.out.println("*** " + text + " is visible");
-            } catch (AssertionError e){
-                System.out.println("Assert failed: " + e.getMessage());
-            }
-        } catch (AssertionError e) {
-            System.out.println("Assert failed: " + e.getMessage());
-        }
+        Assert.assertEquals(text, "New User Signup!");
+        System.out.println("*** " + text + " is visible");
     }
 
     default public String refactorEmail(String email){
@@ -58,8 +49,8 @@ public interface LoginFunctions extends Waits{
         String path = "src" + File.separator + "main" + File.separator + "java" + File.separator + "ravn" + File.separator + "TestFile" + File.separator + "credentials.txt";
 
         FileWriter writer = new FileWriter(path);
-            writer.write(refactoredEmail);
-            writer.close();
+        writer.write(refactoredEmail);
+        writer.close();
         
         login.signUpButton().click();
         System.out.println("*** Clicked on Sign Up button");
@@ -82,16 +73,8 @@ public interface LoginFunctions extends Waits{
         login.logInButton().click();
         System.out.println("*** Clicked on Login button");
 
-        try {
-            Assert.assertTrue(login.logInErrorMessage().isDisplayed());
-            try{
-                System.out.println("*** The following error was displayed: " + login.logInErrorMessage().getText());
-            } catch (AssertionError e){
-                System.out.println("Assert failed: " + e.getMessage());
-            }
-        } catch (AssertionError e) {
-            System.out.println("Assert failed: " + e.getMessage());
-        }
+        Assert.assertTrue(login.logInErrorMessage().isDisplayed());
+        System.out.println("*** The following error was displayed: " + login.logInErrorMessage().getText());
 
         System.out.println("\n*** Execution Finished ***\n");
 

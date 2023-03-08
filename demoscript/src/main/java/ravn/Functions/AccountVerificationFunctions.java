@@ -15,17 +15,9 @@ public interface AccountVerificationFunctions extends Waits{
 
         String text = element.verificationTitle().getText();
 
-        try {
-            Assert.assertTrue(element.verificationTitle().isDisplayed());
-            try{
-                Assert.assertEquals(text, title);
-                System.out.println("*** " + text + " is visible");
-            } catch (AssertionError e){
-                System.out.println("Assert failed: " + e.getMessage());
-            }
-        } catch (AssertionError e) {
-            System.out.println("Assert failed: " + e.getMessage());
-        }
+        Assert.assertEquals(text, title);
+        System.out.println("*** " + text + " is visible");
+
     }
 
     default public void completeValidation(WebDriver driver){
