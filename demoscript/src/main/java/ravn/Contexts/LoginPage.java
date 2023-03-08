@@ -12,17 +12,20 @@ public class LoginPage {
     }
 
     /* SIGN UP SECTION LOCATORS */
-    public WebElement singUpSection(){
 
+    /* SIGN UP CONTAINER */
+    public WebElement singUpSection(){
         WebElement form = driver.findElement(By.className("signup-form"));
         return form;
     }
 
+    /* SIGN UP HEADER */
     public WebElement signUpBanner(){
-        WebElement banner = singUpSection().findElement(By.tagName("h2"));
+        WebElement banner = singUpSection().findElement(By.cssSelector("div.signup-form>h2"));
         return banner;
     }
 
+    /* SIGN UP CONTROLS */
     public WebElement nameInput(){
         WebElement name = singUpSection().findElement(By.name("name"));
         return name;
@@ -40,17 +43,19 @@ public class LoginPage {
 
     /* LOG IN SECTION LOCATORS */
 
+    /* LOG IN CONTAINER */
     public WebElement logInSection(){
-
         WebElement form = driver.findElement(By.className("login-form"));
         return form;
     }
 
+    /* LOG IN HEADER */
     public WebElement logInBanner(){
-        WebElement banner = logInSection().findElement(By.tagName("h2"));
+        WebElement banner = logInSection().findElement(By.cssSelector("div.login-form>h2"));
         return banner;
     }
 
+    /* LOG IN CONTROLS */
     public WebElement logInEmail(){
         WebElement email = logInSection().findElement(By.name("email"));
         return email;
@@ -66,8 +71,9 @@ public class LoginPage {
         return button;
     }
 
+    /* LOG IN ERROR MESSAGE */
     public WebElement logInErrorMessage(){
-        WebElement errorText = logInSection().findElement(By.tagName("p"));
+        WebElement errorText = logInSection().findElement(By.cssSelector("div.login-form>form>p"));
         return errorText;
     }
 }

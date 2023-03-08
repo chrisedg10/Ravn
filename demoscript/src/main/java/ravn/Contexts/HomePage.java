@@ -13,14 +13,15 @@ public class HomePage {
         this.driver = driver;
     }
 
+    /* LIST OF NAV BAR LINKS */
     public List<WebElement> homeLinks(){
 
-        WebElement navbar = driver.findElement(By.className("navbar-nav"));
-        List<WebElement> links = navbar.findElements(By.tagName("a"));
+        List<WebElement> links = driver.findElements(By.cssSelector("ul.navbar-nav>li"));
 
         return links;
     }
 
+    /* PIVOT LOCATORS */
     public WebElement slider(){
         WebElement slider = driver.findElement(By.id("slider-carousel"));
         return slider;

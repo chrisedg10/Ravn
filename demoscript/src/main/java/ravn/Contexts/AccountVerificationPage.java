@@ -12,18 +12,21 @@ public class AccountVerificationPage {
         this.driver = driver;
     }
 
+    /* CONTAINER LOCATOR */
     public WebElement verificationContainer(){
         WebElement container = driver.findElement(By.className("col-sm-9"));
         return container;
     }
 
+    /* HEADERS LOCATOR */
     public WebElement verificationTitle(){
-        WebElement title = verificationContainer().findElement(By.tagName("b"));
+        WebElement title = verificationContainer().findElement(By.cssSelector("h2.title>b"));
         return title;
     }
 
+    /* CONTROLS LOCATOR */
     public WebElement continueButton(){
-        WebElement continueBtn = verificationContainer().findElement(By.tagName("a"));
+        WebElement continueBtn = verificationContainer().findElement(By.cssSelector("div.pull-right>a"));
         return continueBtn;
     }
 }

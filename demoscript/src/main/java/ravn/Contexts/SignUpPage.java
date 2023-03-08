@@ -14,6 +14,7 @@ public class SignUpPage {
         this.driver = driver;
     }
 
+    /* CONTAINER LOCATOR */
     public WebElement accountInfoSection(){
         WebElement accountSection = driver.findElement(By.className("login-form"));
         return accountSection; 
@@ -21,14 +22,16 @@ public class SignUpPage {
 
     /*** ACCOUNT INFORMATION LOCATORS ***/
 
+    /* ACCOUNT INFORMATION HEADER */
     public List<WebElement> banners(){
-        List<WebElement> headers = accountInfoSection().findElements(By.tagName("b"));
+        List<WebElement> headers = accountInfoSection().findElements(By.cssSelector("div.login-form>h2.title>b"));
         return headers;
     }
 
+    /* ACCOUNT INFORMATION CONTROLS */
     public List<WebElement> radioButtons(){
         WebElement section = accountInfoSection().findElement(By.className("clearfix"));
-        List<WebElement> radioBtns = section.findElements(By.tagName("input"));
+        List<WebElement> radioBtns = section.findElements(By.cssSelector("*>div.radio>span>input"));
         return radioBtns;
     }
 
@@ -38,7 +41,7 @@ public class SignUpPage {
     }
 
     public List<WebElement> getDropdowns(){
-        List<WebElement> dropdowns = accountInfoSection().findElements(By.tagName("select"));
+        List<WebElement> dropdowns = accountInfoSection().findElements(By.cssSelector("select"));
         return dropdowns;
     }
 
@@ -47,18 +50,20 @@ public class SignUpPage {
         ArrayList<WebElement> checkboxes = new ArrayList<WebElement>();
 
         for(WebElement cb: checkers){
-            checkboxes.add(cb.findElement(By.tagName("input")));
+            checkboxes.add(cb.findElement(By.cssSelector("*>div.checker>span>input")));
         }
         return checkboxes;
     }
 
     /*** ADDRESS INFORMATION LOCATORS ***/
 
+    /* ADDRESS INFORMATION HEADER */
     public WebElement firstName(){
         WebElement name = accountInfoSection().findElement(By.name("first_name"));
         return name;
     }
 
+    /* ADDRESS INFORMATION CONTROLS */
     public WebElement lastName(){
         WebElement last = accountInfoSection().findElement(By.name("last_name"));
         return last;
