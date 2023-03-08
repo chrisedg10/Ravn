@@ -28,7 +28,7 @@ Languaje support for java
 XML
 
 * Configure Java Runtime
-* Browse to Mvn executable (see prerrequisites) before execute maven commands
+* If Java displays a popup window requesting a Maven path, browse to Mvn executable (see prerrequisites) before execute maven commands
 * Refresh/Restart VS code if needed
 
 # VS Code Execution
