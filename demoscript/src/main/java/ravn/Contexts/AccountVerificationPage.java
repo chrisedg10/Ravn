@@ -26,20 +26,4 @@ public class AccountVerificationPage {
         WebElement continueBtn = verificationContainer().findElement(By.tagName("a"));
         return continueBtn;
     }
-
-    public WebElement addContainer(){
-        WebElement container = driver.findElement(By.cssSelector("html > ins"));
-        return container;
-    }
-
-    public WebElement addFrame(){
-        WebElement addFame = addContainer().findElement(By.name("aswift_1"));
-        return addFame;
-    }
-
-    public WebElement closeAddBtn(){
-        //WebElement close = addFrame().findElement(By.cssSelector("#dismiss-button"));
-        WebElement close = addFrame().findElement(By.id("ad_position_box"));
-        return close;
-    }
 }

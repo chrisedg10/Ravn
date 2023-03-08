@@ -30,14 +30,15 @@ public interface AccountVerificationFunctions extends Waits{
     }
 
     default public void closeAdd(WebDriver driver){
+        AdvertisementLocators ad = new AdvertisementLocators(driver);
         AccountVerificationPage element = new AccountVerificationPage(driver);
 
         implicitWait(driver);
 
-        if(element.addContainer().isEnabled()){
+        if(ad.addContainer().isEnabled()){
             System.out.println("*** Ad Element Found");
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].remove()", element.addContainer());
+            js.executeScript("arguments[0].remove()", ad.addContainer());
             System.out.println("*** Clicked on Close Add Button");
         }
 
